@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistically Speaking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+            color: #333;
+            text-align: center;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        p {
+            font-size: 1.5rem;
+        }
+        footer {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>Statistically Speaking</h1>
+    <p id="message"></p>
+    <footer>
+        &copy; <span id="year"></span> Statistically Speaking. All rights reserved.
+    </footer>
+    <script>
+        const messageElement = document.getElementById('message');
+        const yearElement = document.getElementById('year');
+        
+        // Get today's date
+        const today = new Date();
+        const formattedDate = today.toLocaleDateString('en-US', {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+        });
+
+        // Set the message
+        messageElement.textContent = `Today, ${formattedDate}, statistically speaking, is the best sales day of the year.`;
+
+        // Set the year in the footer
+        yearElement.textContent = today.getFullYear();
+    </script>
+</body>
+</html>
